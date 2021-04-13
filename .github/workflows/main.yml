@@ -28,5 +28,5 @@ jobs:
       # Runs a single command using the runners shell
       - name: docker build python
         run: |
-          docker build ./helloWorldFlask -t flaskHello:1.0
+          docker build -t ./helloWorldFlask flask-hello-world:1.0 .
 
