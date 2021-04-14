@@ -25,7 +25,7 @@ SECRET_KEY = 'j16e4z0he_jtjqt3lc5r034cl60mex=+zq6hhfel4lh7(3=x6h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["intelanalyzer.azurewebsites.net"]
 
 
 # Application definition
