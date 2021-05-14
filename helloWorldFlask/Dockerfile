@@ -4,7 +4,9 @@ WORKDIR /helloWorldFlask
 
 ADD . /helloWorldFlask
 
+RUN pip install --upgrade setuptools
 RUN pip install -r requirements.txt
+
 
 EXPOSE 5000
 
