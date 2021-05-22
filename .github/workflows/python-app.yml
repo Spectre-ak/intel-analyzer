@@ -26,9 +26,9 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: docker build python
-        run: |
-          docker build ./helloWorldFlask -t flask-hello-world:1.0
+      # - name: docker build python
+        # run: |
+        #  docker build ./helloWorldFlask -t flask-hello-world:1.0
           
       - name: 'Build and push image'
         uses: azure/docker-login@v1
@@ -37,6 +37,6 @@ jobs:
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
       - run: |
-            docker build ./helloWorldFlask -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/flask-world:1.1
+            docker build ./flask -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/flask-world:1.1
             docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/flask-world:1.1
 
