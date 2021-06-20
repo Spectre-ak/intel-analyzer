@@ -1,6 +1,6 @@
 # intel analyzer
 
 
-###### CI/CD at https://intelanalyzer.azurewebsites.net/
+###### Application available at https://intelanalyzer.azurewebsites.net/
 
 
