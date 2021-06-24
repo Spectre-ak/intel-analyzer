@@ -17,10 +17,12 @@ class SymptomInput extends React.Component{
         super(props);
         this.addSymptom=this.addSymptom.bind(this);
         this.showSymptomsList=this.showSymptomsList.bind(this);
-        this.state={seletedSymptoms:[],
+        this.state={
+            seletedSymptoms:[],
             searchResultSymptomsList:symtoms_list,
             searchResults:<Loader/>
         };
+        this.getOption=this.getOption.bind(this);
     }
     componentDidMount(){
         this.showSymptomsList()
@@ -31,7 +33,7 @@ class SymptomInput extends React.Component{
     showSymptomsList(){
         const results=[];
         this.state.searchResultSymptomsList.forEach(element => {
-            results.push(<Badge name={element} addSymptom={this.addSymptom()}/>)
+            results.push(<Badge name={element} addSymptom={this.getOption}/>)
         });
         this.setState({searchResults:results});
     }
@@ -49,6 +51,25 @@ class SymptomInput extends React.Component{
             </div>
         )
     }
+
+    getOption(e){
+        const symp=e.target.innerText
+        let flag=true;
+        this.state.seletedSymptoms.forEach(element=>{
+            if(element===symp){
+                console.log(element)
+                flag=false;
+            }
+        });
+        if(flag){
+            let newArr=this.state.seletedSymptoms.concat(symp);
+            //this.state.seletedSymptoms=newArr;
+            this.setState({seletedSymptoms:newArr});
+            console.log(this.state.seletedSymptoms,newArr)
+        }
+        console.log(this.state.seletedSymptoms);
+    };
+
 }
 
 export default SymptomInput;
